@@ -10,6 +10,6 @@ public class DefaultController {
 
     @GetMapping
     public String sayHello(){
-        return "欢迎光临！";
+        return "欢迎光临,我有才！";
     }
 }
