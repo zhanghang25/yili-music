@@ -19,7 +19,5 @@
   "envParams": {},
   "customLogs": "stdout",
   "dataBaseName":"yili-music",
-  "executeSQLs":[
-    "CREATE DATABASE IF NOT EXISTS yili-music;"
-  ]
+
 }
