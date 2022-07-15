@@ -18,6 +18,5 @@
   ],
   "envParams": {},
   "customLogs": "stdout",
-  "dataBaseName":"yili-music",
-
+  "dataBaseName":"yili-music"
 }
