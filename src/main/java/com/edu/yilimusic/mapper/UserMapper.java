@@ -1,5 +1,6 @@
 package com.edu.yilimusic.mapper;
 
+import com.edu.yilimusic.dto.UserCreateDto;
 import com.edu.yilimusic.dto.UserDto;
 import com.edu.yilimusic.entity.User;
 import com.edu.yilimusic.vo.UserVo;
@@ -12,6 +13,8 @@ public interface UserMapper {
     UserDto toDto(User user);
 
     UserVo toVo(UserDto userDto);
+
+    User createEntity(UserCreateDto userCreateDto);
 
 
 }

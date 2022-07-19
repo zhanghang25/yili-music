@@ -1,13 +1,12 @@
 package com.edu.yilimusic.controller;
 
+import com.edu.yilimusic.dto.UserCreateDto;
 import com.edu.yilimusic.dto.UserDto;
 import com.edu.yilimusic.mapper.UserMapper;
 import com.edu.yilimusic.service.UserService;
 import com.edu.yilimusic.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,5 +37,10 @@ public class UserController {
         Stream<UserVo> userVoStream = stream.map(userMapper::toVo);
         List<UserVo> collect = userVoStream.collect(Collectors.toList());
         return collect;
+    }
+
+    @PostMapping("/")
+    UserVo create(@RequestBody UserCreateDto userCreateDto   ) {
+        return userMapper.toVo(userService.create(userCreateDto)) ;
     }
 }
