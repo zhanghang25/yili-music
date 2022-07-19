@@ -1,5 +1,8 @@
 package com.edu.yilimusic.vo;
 
+import lombok.Data;
+
+@Data
 public class RoleVo {
 
     private String id;
