@@ -41,19 +41,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
                 .authorizeRequests()
-//                .antMatchers(HttpMethod.POST,SIGN_UP_URL)
-//                .permitAll()
-                .anyRequest()
+                .antMatchers(HttpMethod.POST,SIGN_UP_URL)
                 .permitAll()
-//                .authenticated()
+                .anyRequest().authenticated()
                 .and()
-
 
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))
                 .addFilter(new JwtAuthorizationFilter(authenticationManager()))
-//                .exceptionHandling()
-//                .authenticationEntryPoint(restAuthenticationEntryPoint)
-//                .and()
+                .exceptionHandling()
+                .authenticationEntryPoint(restAuthenticationEntryPoint)
+                .and()
 
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
