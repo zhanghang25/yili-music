@@ -51,6 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .exceptionHandling()
 //                .authenticationEntryPoint(restAuthenticationEntryPoint)
 //                .and()
+
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
