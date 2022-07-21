@@ -14,6 +14,7 @@ import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin
 public class UserController {
 
     UserService userService;
@@ -35,8 +36,8 @@ public class UserController {
         List<UserDto> list = userService.list();
         Stream<UserDto> stream = list.stream();
         Stream<UserVo> userVoStream = stream.map(userMapper::toVo);
-        List<UserVo> collect = userVoStream.collect(Collectors.toList());
-        return collect;
+        return userVoStream.collect(Collectors.toList());
+
     }
 
     @PostMapping("/")
